@@ -5,6 +5,8 @@
 [![Maven](https://img.shields.io/badge/Maven-3.6+-green.svg)](https://maven.apache.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+[![English](https://img.shields.io/badge/English-README_EN.md-blue.svg)](README_EN.md) [![中文](https://img.shields.io/badge/中文-README.md-green.svg)](README.md)
+
 A SonarQube plugin that integrates [Trivy](https://aquasecurity.github.io/trivy/) vulnerability scanner results into SonarQube analysis. This plugin reads Trivy SARIF reports and creates security issues in SonarQube, enabling comprehensive security analysis within your existing SonarQube workflow.
 
 ## 🚀 Features

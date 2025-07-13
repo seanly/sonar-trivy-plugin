@@ -5,6 +5,8 @@
 [![Maven](https://img.shields.io/badge/Maven-3.6+-green.svg)](https://maven.apache.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+[![English](https://img.shields.io/badge/English-README_EN.md-blue.svg)](README_EN.md) [![中文](https://img.shields.io/badge/中文-README.md-green.svg)](README.md)
+
 一个将 [Trivy](https://aquasecurity.github.io/trivy/) 漏洞扫描器结果集成到 SonarQube 分析中的插件。该插件读取 Trivy SARIF 报告并在 SonarQube 中创建安全问题，使您能够在现有的 SonarQube 工作流程中进行全面的安全分析。
 
 ## 🚀 功能特性
