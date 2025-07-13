@@ -1,0 +1,15 @@
+/target/
+
+*.iml
+.idea
+.classpath
+.settings/
+.vscode/
+.project
+
+.DS_Store
+
+overops_db.json
+
+.trivycache
+

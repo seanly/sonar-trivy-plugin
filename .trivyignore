@@ -1,0 +1,43 @@
+# Trivy Ignore File
+# Files and directories to exclude from Trivy filesystem scanning
+
+# Build artifacts
+target/
+*.jar
+*.war
+*.ear
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Git files
+.git/
+.gitignore
+
+# Docker files (if not scanning for container vulnerabilities)
+Dockerfile*
+docker-compose*.yml
+
+# Documentation
+README.md
+*.md
+
+# Test files (optional - remove if you want to scan test files)
+src/test/
+
+# Reports directory (to avoid scanning previous reports)
+reports/ 

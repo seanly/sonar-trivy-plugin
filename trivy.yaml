@@ -1,0 +1,118 @@
+# Trivy Configuration File
+# Configuration for Trivy filesystem scanning
+
+# Global settings
+quiet: false
+debug: false
+insecure: false
+timeout: 5m
+
+# Filesystem scan settings
+fs:
+  # Scanners to use
+  scanners:
+    - vuln      # Vulnerability scanner
+    - secret    # Secret scanner
+    - config    # Misconfiguration scanner
+  
+  # Severity levels to report
+  severity:
+    - CRITICAL
+    - HIGH
+    - MEDIUM
+    - LOW
+  
+  # Skip directories
+  skip-dirs:
+    - target/
+    - .git/
+    - .idea/
+    - .vscode/
+    - reports/
+  
+  # Skip files
+  skip-files:
+    - "*.jar"
+    - "*.war"
+    - "*.ear"
+    - "*.log"
+    - "*.tmp"
+    - "*.temp"
+    - ".DS_Store"
+    - "Thumbs.db"
+  
+  # File patterns to scan
+  include-paths:
+    - "src/"
+    - "pom.xml"
+    - "*.java"
+    - "*.xml"
+    - "*.yml"
+    - "*.yaml"
+    - "*.properties"
+    - "*.json"
+
+# Vulnerability scanner settings
+vuln:
+  # Database settings
+  db:
+    repository: "ghcr.io/aquasecurity/trivy-db"
+    skip-update: false
+    download-only: false
+  
+  # Policy settings
+  policy:
+    namespaces:
+      - "appshield"
+      - "defsec"
+      - "avd"
+  
+  # Ignore unfixed vulnerabilities
+  ignore-unfixed: false
+  
+  # Include non-compliant packages
+  include-non-compliant: true
+
+# Secret scanner settings
+secret:
+  # Scan for secrets in files
+  scan:
+    - "*.java"
+    - "*.xml"
+    - "*.yml"
+    - "*.yaml"
+    - "*.properties"
+    - "*.json"
+    - "*.sh"
+    - "*.bash"
+  
+  # Secret patterns to look for
+  patterns:
+    - "api[_-]?key"
+    - "password"
+    - "secret"
+    - "token"
+    - "private[_-]?key"
+
+# Misconfiguration scanner settings
+config:
+  # Policy bundles to use
+  policy-bundle: "ghcr.io/aquasecurity/defsec:latest"
+  
+  # Include deprecated policies
+  include-deprecated: false
+  
+  # Include experimental policies
+  include-experimental: false
+
+# Output settings
+output:
+  format: "sarif"
+  template: ""
+  output: "reports/trivy-fs-scan.sarif"
+  
+# Cache settings
+cache:
+  backend: "fs"
+  dir: ".trivycache"
+  ttl: "24h" 

@@ -1,0 +1,296 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "fullName": "Trivy Vulnerability Scanner",
+          "informationUri": "https://github.com/aquasecurity/trivy",
+          "name": "Trivy",
+          "rules": [
+            {
+              "id": "CVE-2022-25647",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "com.google.code.gson-gson: Deserialization of Untrusted Data in com.google.code.gson-gson"
+              },
+              "fullDescription": {
+                "text": "The package com.google.code.gson:gson before 2.8.9 are vulnerable to Deserialization of Untrusted Data via the writeReplace() method in internal classes, which may lead to DoS attacks."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-25647",
+              "help": {
+                "text": "Vulnerability CVE-2022-25647\nSeverity: HIGH\nPackage: com.google.code.gson:gson\nFixed Version: 2.8.9\nLink: [CVE-2022-25647](https://avd.aquasec.com/nvd/cve-2022-25647)\nThe package com.google.code.gson:gson before 2.8.9 are vulnerable to Deserialization of Untrusted Data via the writeReplace() method in internal classes, which may lead to DoS attacks.",
+                "markdown": "**Vulnerability CVE-2022-25647**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|com.google.code.gson:gson|2.8.9|[CVE-2022-25647](https://avd.aquasec.com/nvd/cve-2022-25647)|\n\nThe package com.google.code.gson:gson before 2.8.9 are vulnerable to Deserialization of Untrusted Data via the writeReplace() method in internal classes, which may lead to DoS attacks."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "7.7",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-47554",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "apache-commons-io: Possible denial of service attack on untrusted input to XmlStreamReader"
+              },
+              "fullDescription": {
+                "text": "Uncontrolled Resource Consumption vulnerability in Apache Commons IO.\n\nThe org.apache.commons.io.input.XmlStreamReader class may excessively consume CPU resources when processing maliciously crafted input.\n\n\nThis issue affects Apache Commons IO: from 2.0 before 2.14.0.\n\nUsers are recommended to upgrade to version 2.14.0 or later, which fixes the issue."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-47554",
+              "help": {
+                "text": "Vulnerability CVE-2024-47554\nSeverity: HIGH\nPackage: commons-io:commons-io\nFixed Version: 2.14.0\nLink: [CVE-2024-47554](https://avd.aquasec.com/nvd/cve-2024-47554)\nUncontrolled Resource Consumption vulnerability in Apache Commons IO.\n\nThe org.apache.commons.io.input.XmlStreamReader class may excessively consume CPU resources when processing maliciously crafted input.\n\n\nThis issue affects Apache Commons IO: from 2.0 before 2.14.0.\n\nUsers are recommended to upgrade to version 2.14.0 or later, which fixes the issue.",
+                "markdown": "**Vulnerability CVE-2024-47554**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|commons-io:commons-io|2.14.0|[CVE-2024-47554](https://avd.aquasec.com/nvd/cve-2024-47554)|\n\nUncontrolled Resource Consumption vulnerability in Apache Commons IO.\n\nThe org.apache.commons.io.input.XmlStreamReader class may excessively consume CPU resources when processing maliciously crafted input.\n\n\nThis issue affects Apache Commons IO: from 2.0 before 2.14.0.\n\nUsers are recommended to upgrade to version 2.14.0 or later, which fixes the issue."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "7.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2021-29425",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "apache-commons-io: Limited path traversal in Apache Commons IO 2.2 to 2.6"
+              },
+              "fullDescription": {
+                "text": "In Apache Commons IO before 2.7, When invoking the method FileNameUtils.normalize with an improper input string, like \"//../foo\", or \"\\\\..\\foo\", the result would be the same value, thus possibly providing access to files in the parent directory, but not further above (thus \"limited\" path traversal), if the calling code would use the result to construct a path value."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2021-29425",
+              "help": {
+                "text": "Vulnerability CVE-2021-29425\nSeverity: MEDIUM\nPackage: commons-io:commons-io\nFixed Version: 2.7\nLink: [CVE-2021-29425](https://avd.aquasec.com/nvd/cve-2021-29425)\nIn Apache Commons IO before 2.7, When invoking the method FileNameUtils.normalize with an improper input string, like \"//../foo\", or \"\\\\..\\foo\", the result would be the same value, thus possibly providing access to files in the parent directory, but not further above (thus \"limited\" path traversal), if the calling code would use the result to construct a path value.",
+                "markdown": "**Vulnerability CVE-2021-29425**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|commons-io:commons-io|2.7|[CVE-2021-29425](https://avd.aquasec.com/nvd/cve-2021-29425)|\n\nIn Apache Commons IO before 2.7, When invoking the method FileNameUtils.normalize with an improper input string, like \"//../foo\", or \"\\\\..\\foo\", the result would be the same value, thus possibly providing access to files in the parent directory, but not further above (thus \"limited\" path traversal), if the calling code would use the result to construct a path value."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "4.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2025-48924",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "commons-lang/commons-lang: org.apache.commons/commons-lang3: Uncontrolled Recursion vulnerability in Apache Commons Lang"
+              },
+              "fullDescription": {
+                "text": "Uncontrolled Recursion vulnerability in Apache Commons Lang.\n\nThis issue affects Apache Commons Lang: Starting with commons-lang:commons-lang 2.0 to 2.6, and, from org.apache.commons:commons-lang3 3.0 before 3.18.0.\n\nThe methods ClassUtils.getClass(...) can throw StackOverflowError on very long inputs. Because an Error is usually not handled by applications and libraries, a \nStackOverflowError could cause an application to stop.\n\nUsers are recommended to upgrade to version 3.18.0, which fixes the issue."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2025-48924",
+              "help": {
+                "text": "Vulnerability CVE-2025-48924\nSeverity: MEDIUM\nPackage: commons-lang:commons-lang\nFixed Version: \nLink: [CVE-2025-48924](https://avd.aquasec.com/nvd/cve-2025-48924)\nUncontrolled Recursion vulnerability in Apache Commons Lang.\n\nThis issue affects Apache Commons Lang: Starting with commons-lang:commons-lang 2.0 to 2.6, and, from org.apache.commons:commons-lang3 3.0 before 3.18.0.\n\nThe methods ClassUtils.getClass(...) can throw StackOverflowError on very long inputs. Because an Error is usually not handled by applications and libraries, a \nStackOverflowError could cause an application to stop.\n\nUsers are recommended to upgrade to version 3.18.0, which fixes the issue.",
+                "markdown": "**Vulnerability CVE-2025-48924**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|commons-lang:commons-lang||[CVE-2025-48924](https://avd.aquasec.com/nvd/cve-2025-48924)|\n\nUncontrolled Recursion vulnerability in Apache Commons Lang.\n\nThis issue affects Apache Commons Lang: Starting with commons-lang:commons-lang 2.0 to 2.6, and, from org.apache.commons:commons-lang3 3.0 before 3.18.0.\n\nThe methods ClassUtils.getClass(...) can throw StackOverflowError on very long inputs. Because an Error is usually not handled by applications and libraries, a \nStackOverflowError could cause an application to stop.\n\nUsers are recommended to upgrade to version 3.18.0, which fixes the issue."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "6.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2020-13956",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "apache-httpclient: incorrect handling of malformed authority component in request URIs"
+              },
+              "fullDescription": {
+                "text": "Apache HttpClient versions prior to version 4.5.13 and 5.0.3 can misinterpret malformed authority component in request URIs passed to the library as java.net.URI object and pick the wrong target host for request execution."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-13956",
+              "help": {
+                "text": "Vulnerability CVE-2020-13956\nSeverity: MEDIUM\nPackage: org.apache.httpcomponents:httpclient\nFixed Version: 4.5.13, 5.0.3\nLink: [CVE-2020-13956](https://avd.aquasec.com/nvd/cve-2020-13956)\nApache HttpClient versions prior to version 4.5.13 and 5.0.3 can misinterpret malformed authority component in request URIs passed to the library as java.net.URI object and pick the wrong target host for request execution.",
+                "markdown": "**Vulnerability CVE-2020-13956**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|org.apache.httpcomponents:httpclient|4.5.13, 5.0.3|[CVE-2020-13956](https://avd.aquasec.com/nvd/cve-2020-13956)|\n\nApache HttpClient versions prior to version 4.5.13 and 5.0.3 can misinterpret malformed authority component in request URIs passed to the library as java.net.URI object and pick the wrong target host for request execution."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.3",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            }
+          ],
+          "version": "0.64.1"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2022-25647",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Package: com.google.code.gson:gson\nInstalled Version: 2.8.5\nVulnerability CVE-2022-25647\nSeverity: HIGH\nFixed Version: 2.8.9\nLink: [CVE-2022-25647](https://avd.aquasec.com/nvd/cve-2022-25647)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pom.xml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 77,
+                  "startColumn": 1,
+                  "endLine": 81,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pom.xml: com.google.code.gson:gson@2.8.5"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-47554",
+          "ruleIndex": 1,
+          "level": "error",
+          "message": {
+            "text": "Package: commons-io:commons-io\nInstalled Version: 2.6\nVulnerability CVE-2024-47554\nSeverity: HIGH\nFixed Version: 2.14.0\nLink: [CVE-2024-47554](https://avd.aquasec.com/nvd/cve-2024-47554)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pom.xml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pom.xml: commons-io:commons-io@2.6"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-29425",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: commons-io:commons-io\nInstalled Version: 2.6\nVulnerability CVE-2021-29425\nSeverity: MEDIUM\nFixed Version: 2.7\nLink: [CVE-2021-29425](https://avd.aquasec.com/nvd/cve-2021-29425)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pom.xml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pom.xml: commons-io:commons-io@2.6"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-48924",
+          "ruleIndex": 3,
+          "level": "warning",
+          "message": {
+            "text": "Package: commons-lang:commons-lang\nInstalled Version: 2.6\nVulnerability CVE-2025-48924\nSeverity: MEDIUM\nFixed Version: \nLink: [CVE-2025-48924](https://avd.aquasec.com/nvd/cve-2025-48924)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pom.xml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 1,
+                  "endLine": 62,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pom.xml: commons-lang:commons-lang@2.6"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-13956",
+          "ruleIndex": 4,
+          "level": "warning",
+          "message": {
+            "text": "Package: org.apache.httpcomponents:httpclient\nInstalled Version: 4.5.11\nVulnerability CVE-2020-13956\nSeverity: MEDIUM\nFixed Version: 4.5.13, 5.0.3\nLink: [CVE-2020-13956](https://avd.aquasec.com/nvd/cve-2020-13956)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pom.xml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 1,
+                  "endLine": 93,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pom.xml: org.apache.httpcomponents:httpclient@4.5.11"
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "file:///Volumes/opsbox/tmp/sonar-sarif-plugin/"
+        }
+      }
+    }
+  ]
+}

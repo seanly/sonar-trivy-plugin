@@ -1,0 +1,32 @@
+name: sonarqube
+
+services:
+  sonarqube:
+    image: seanly/appset:sonarqube-9.9.8-community-1
+    restart: unless-stopped
+    expose:
+      - "9000"
+    ports:
+      - "9000:9000"
+      - "8001:8001"
+      - "8002:8002"
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+      - discovery.type=single-node
+      - SONAR_AUTHENTICATOR_DOWNCASE=true
+      - SONAR_UPDATECENTER_ACTIVATE=false
+      - SONAR_WEB_JAVAADDITIONALOPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:8001
+      - SONAR_CE_JAVAADDITIONALOPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:8002
+    volumes:
+      - sonarqube-data:/opt/sonarqube/data
+      - ./target/sonar-trivy-plugin-9.0.0.jar:/opt/sonarqube/extensions/plugins/sonar-trivy-plugin-9.0.0.jar
+    networks:
+      - sonar-network
+
+
+volumes:
+  sonarqube-data:
+
+networks:
+  sonar-network:
+    driver: bridge
